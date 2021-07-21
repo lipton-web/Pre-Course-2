@@ -66,11 +66,12 @@
         function exchange_rate() {
             $.ajax({
                 type: "GET",
-                url: "http://spartacodingclub.shop/sparta_api/rate",
+                url: "https://api.manana.kr/exchange/rate.json",
                 data: {},
                 success: function(response){
-                        let rate = response['rate'];
-                        $("#exchange_rate").text(`달러-원 환율 : ${rate}`);
+                    // console.log(response);
+                    let rate = response[1]['rate'];
+                    $("#exchange_rate").text(`달러-원 환율 : ${rate}`);
                     }
                  })
             }
